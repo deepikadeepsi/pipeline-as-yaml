@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    stages {
+        stage('log jenkins demo') {
+            steps {
+            sh 'mvn -version'
+                        sh 'java -version'
+                        sh 'git --version'
+            }
+        }
+        stage ('jenkins demo build') {
+            steps {
+                sh 'mvn clean compaile test install'
+            }
+        }
+    }
+}
